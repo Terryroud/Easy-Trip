@@ -1,0 +1,63 @@
+{% extends 'main/layout.html'%}
+{% load static %}
+
+{% block title %}
+    Каталог
+{% endblock %}
+
+
+{% block main %}
+
+
+<div class="serlist" id="serlist">
+    <div class="navser">
+        <input class="search" placeholder="Search" />
+        <button class="filt">Фильтры <svg class="svgbf" width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M18.2929 15.2893C18.6834 14.8988 18.6834 14.2656 18.2929 13.8751L13.4007 8.98766C12.6195 8.20726 11.3537 8.20757 10.5729 8.98835L5.68257 13.8787C5.29205 14.2692 5.29205 14.9024 5.68257 15.2929C6.0731 15.6835 6.70626 15.6835 7.09679 15.2929L11.2824 11.1073C11.673 10.7168 12.3061 10.7168 12.6966 11.1073L16.8787 15.2893C17.2692 15.6798 17.9024 15.6798 18.2929 15.2893Z" fill="#0F0F0F"></path> </g></svg></button>
+    </div>
+
+
+    <div class="filters" style="height: 0;"></div>
+
+    <ul class="list">
+        {% for attrac in attrac %}
+            <li class="lis" id="hacker-item">
+                <div class="notrate">
+                    <div class="photodiv">
+                        <img class="photo" src= "{{ attrac.image.url }} " alt="картинка">
+                    </div>
+                    <div class="descd">
+                        <h2 class="name">{{ attrac.title }}</h2>
+                        <p class="desc">{{ attrac.descrip }}</p>
+                    </div>
+                </div>
+                <div class="rating">
+                    <p class="rate">{{ attrac.rating }}/10</p>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+{% endblock %}
+
+
+{% block classab %}
+    'navel'
+{% endblock %}
+
+{% block classus %}
+    'navel '
+{% endblock %}
+
+{% block classkal %}
+    'navel catal'
+{% endblock %}
+{% block linkjs %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js" referrerpolicy="no-referrer"></script>
+    <script src="{% static 'main/js/index.js'%}"></script>
+{% endblock %}
+
+{% block css %}
+    {% static 'main/css/style.css'%}"
+{% endblock %}

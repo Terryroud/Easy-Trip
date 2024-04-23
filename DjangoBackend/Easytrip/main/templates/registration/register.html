@@ -1,0 +1,48 @@
+{% load static %}
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регестрация</title>
+    <link rel="stylesheet" href="{% static 'main/css/reg.css' %}">
+</head>
+<body>
+    <main>
+        <div class="loginfield">
+            <h1>EasyTrip</h1>
+            <form class="form" method="post" >
+                {% csrf_token %}
+
+                <div class="name line">
+                    <input placeholder="Имя пользователя" name="username" type="text">
+                </div>
+                <div class="email line">
+                    <input placeholder="Адрес электронной почты" name="email" type="email">
+                </div>
+                <div class="country line">
+                    <input  placeholder="Страна проживания" name="country" type="text">
+                </div>
+                <div class="password line">
+                    <input placeholder="Пароль" name="password" type="password">
+                </div>
+                <div class="password line">
+                    <input placeholder="Пароль" name="password2" type="password">
+                </div>
+                <div class="input">
+                    <input class="s" type="submit" value="Create my account">
+                </div>
+
+
+                {{ user_form.errors }}
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+{% extends 'main/layout.html'%}
+{% load static %}
+
+{% block title %}
+    Личный Кабинет
+{% endblock %}
+
+{% block classab %}
+    'navel'
+{% endblock %}
+
+{% block classkal %}
+    'navel '
+{% endblock %}
+
+{% block classus %}
+    'navel catal'
+{% endblock %}
+
+{% block profcss %}
+    {% static 'main/css/profile.css'%}"
+{% endblock %}
+
+{% block mainprof %}
+
+
+
+        <div class="prof">
+            <div class="usermain">
+                <p>Имя пользователя:  {{ request.user.username }}</p>
+            </div>
+
+            <div class="tools">
+                <button onclick="location.href='{% url 'logout' %}'">Выйти из аккаунта</button>
+                <button onclick="location.href= 'http://127.0.0.1:8000/admin/'">Инструменты администратора</button>
+            </div>
+
+        </div>
+
+
+
+
+
+{% endblock %}

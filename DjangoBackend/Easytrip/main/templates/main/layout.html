@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Trip - {% block title%} {% endblock %}</title>
+    <link rel="stylesheet" href="{% block css %} {% endblock %} {% block profcss %} {% endblock %}">
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <div class= {% block classkal %} {% endblock %} ><a href="{% url 'home'%}">Каталог</a></div>
+            <div class={% block classab %} {% endblock %}><a href="{% url 'about'%}">О нас</a></div>
+            <div class={% block classus %} {% endblock %}> <a href="{% url 'user'%}">Личный кабинет</a></div>
+        </div>
+    </header>
+    <main>
+        {% block main %}
+
+        {% endblock %}
+
+        {% block about %}
+
+        {% endblock %}
+
+        {% block mainprof %}
+
+        {% endblock %}
+
+    </main>
+
+    <footer>
+        <p>© Все права защищены</p>
+    </footer>
+</body>
+{% block linkjs %}
+
+{% endblock %}
+
+</html>

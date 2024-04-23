@@ -1,0 +1,44 @@
+{% load static %}
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход в аккаунт</title>
+    <link rel="stylesheet" href="{% static 'main/css/login.css'%}">
+</head>
+<body>
+    <main>
+        <div class="loginfield">
+            <h1>EasyTrip</h1>
+            <form class="form" method="post" >
+                {% csrf_token %}
+                <div class="name line">
+                    <p>Имя пользователя:</p>
+                    {{ form.username }}
+                </div>
+                <div class="password line">
+                    <p>Пароль:</p>
+                    {{ form.password }}
+                </div>
+                <div class="input">
+                    <input type="submit" value="Войти"/>
+                    <input type="hidden" name="next" value="{{ next }}"/>
+                </div>
+
+                <div class="reset">
+                    <p><a class="but" href="{% url 'password_reset' %}">Забыли пароль?</a></p>
+                    <p><a class="but" href="{% url 'register' %}">Регистрация</a></p>
+                </div>
+                {{ form.errors }}
+            </form>
+        </div>
+    </main>
+</body>
+</html>
